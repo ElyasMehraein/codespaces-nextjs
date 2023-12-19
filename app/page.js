@@ -11,10 +11,10 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
+import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Unstable_Grid2';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -87,8 +87,14 @@ export default function SearchAppBar() {
           </Toolbar>
         </AppBar>
 
-        <Grid width={"100%"} container spacing={2} >
-          <Grid xs={6} md={5} mdOffset={"auto"} >
+        <Grid sx={{ mt: 2 }}
+          container
+          spacing={2}
+          // direction="column"
+          justifyContent="center"
+        // sx={{ minHeight: '100vh' }}
+        >
+          <Grid xs={10} md={4}>
             <Item >
               <List  >
                 <Typography variant="h6" align="center" sx={{ flexGrow: 1 }}>
@@ -121,7 +127,7 @@ export default function SearchAppBar() {
               </List>
             </Item>
           </Grid>
-          <Grid xs={6} md={5} mdOffset={"auto"}  >
+          <Grid xs={10} md={4} >
             <Item>
               <List >
                 <Typography variant="h6" align="center" sx={{ flexGrow: 1 }}>
@@ -130,7 +136,7 @@ export default function SearchAppBar() {
                 <ListItem>
                   <ListItemAvatar>
                     <Avatar>
-                      <ViewInArIcon />
+                      <InventoryRoundedIcon />
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText primary="68465656" secondary="7 secs ago" />
@@ -138,7 +144,7 @@ export default function SearchAppBar() {
                 <ListItem>
                   <ListItemAvatar>
                     <Avatar>
-                      <ViewInArIcon />
+                      <InventoryRoundedIcon />
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText primary="26698484" secondary="19 secs ago" />
@@ -146,7 +152,7 @@ export default function SearchAppBar() {
                 <ListItem>
                   <ListItemAvatar>
                     <Avatar>
-                      <ViewInArIcon />
+                      <InventoryRoundedIcon />
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText primary="684684682" secondary="31 secs ago" />
