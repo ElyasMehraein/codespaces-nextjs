@@ -7,11 +7,14 @@ import Appbar from '@/components/Appbar';
 import Blocks from '@/components/Blocks';
 import Transactions from '@/components/Transactions';
 
-export default function SearchAppBar() {
+
+
+export default async function SearchAppBar() {
+  
   return (
     <CssBaseline>
       <Box >
-        <Appbar></Appbar>
+        {/* <Appbar></Appbar> */}
 
         <Grid sx={{ pt: 1 }}
           container
