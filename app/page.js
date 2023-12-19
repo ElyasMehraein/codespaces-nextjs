@@ -1,14 +1,31 @@
 "use client"
 import * as React from 'react';
+import Typography from '@mui/material/Typography';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import Grid from '@mui/material/Unstable_Grid2';
+import CssBaseline from '@mui/material/CssBaseline';
+
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,20 +71,92 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function SearchAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search in EtherEly"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <CssBaseline>
+      <Box sx={{ flexGrow: 0 }}>
+        <AppBar variant='outlined' position="static">
+          <Toolbar>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search in EtherEly"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search>
+          </Toolbar>
+        </AppBar>
+
+        <Grid width={"100%"} container spacing={2} >
+          <Grid xs={6} md={5} mdOffset={"auto"} >
+            <Item >
+              <List  >
+                <Typography variant="h6" align="center" sx={{ flexGrow: 1 }}>
+                  Blocks
+                </Typography>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <ViewInArIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="68465656" secondary="7 secs ago" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <ViewInArIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="26698484" secondary="19 secs ago" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <ViewInArIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="684684682" secondary="31 secs ago" />
+                </ListItem>
+              </List>
+            </Item>
+          </Grid>
+          <Grid xs={6} md={5} mdOffset={"auto"}  >
+            <Item>
+              <List >
+                <Typography variant="h6" align="center" sx={{ flexGrow: 1 }}>
+                  Transactions
+                </Typography>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <ViewInArIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="68465656" secondary="7 secs ago" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <ViewInArIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="26698484" secondary="19 secs ago" />
+                </ListItem>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <ViewInArIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="684684682" secondary="31 secs ago" />
+                </ListItem>
+              </List>
+            </Item>
+          </Grid>
+        </Grid>
+      </Box>
+    </CssBaseline >
+
   );
 }
