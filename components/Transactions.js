@@ -6,7 +6,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import InventoryRoundedIcon from '@mui/icons-material/InventoryRounded';
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 
 const Item = styled(Paper)(({ theme }) => ({
