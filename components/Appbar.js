@@ -48,7 +48,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }))
 function Appbar() {
     return (
-        <AppBar variant='outlined' position="static">
+        <AppBar elevation={0} variant='outlined' position="static">
             <Toolbar>
                 <Search>
                     <SearchIconWrapper>
