@@ -39,9 +39,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         [theme.breakpoints.up('sm')]: {
-            width: '16ch',
+            width: '30ch',
             '&:focus': {
-                width: '20ch',
+                width: '32ch',
             },
         },
     },
@@ -49,7 +49,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 function Appbar() {
     return (
         <AppBar elevation={0} variant='outlined' position="static">
-            <Toolbar>
+            <Toolbar sx={{
+                display: "flex",
+                justifyContent: "center",
+            }}>
                 <Search>
                     <SearchIconWrapper>
                         <SearchIcon />
